@@ -38,8 +38,8 @@ namespace MyHashTable
         {
             int size = 1;//счётчик 
             Node temp = Head; //резервный указатель на первый элемент
-            if (Head == Tail) size = 1;
-            else if (Head == null) size = 0;
+            if (Head == null) size = 0;
+            else if (Head == Tail) size = 1;
             else while (temp != Tail)
                 {
                     temp = temp.Next;
