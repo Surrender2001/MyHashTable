@@ -7,13 +7,6 @@ namespace MyHashTable
         static void Main(string[] args)
         {
             var HashTable = new SuperHashTable<int>(20);
-            HashTable.Add(5);
-            HashTable.Add(5);
-            HashTable.Add(5);
-            HashTable.Add(5);
-            HashTable.Add(5);
-
-
 
 
         }
