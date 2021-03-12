@@ -12,9 +12,10 @@ namespace MyHashTable
             var hashTable = new HashTable(size);
             int variant;
             int item;
-            Console.WriteLine("1-add, 2-delete, 3-find, 4-show, 5-quit, default-continue");
+            
             while (true)
             {
+                Console.WriteLine("1-add, 2-delete, 3-find, 4-show, 5-quit, default-continue");
                 variant=int.Parse(Console.ReadLine());
                 switch (variant)
                 {
@@ -24,6 +25,7 @@ namespace MyHashTable
                         break;
                     case 2: 
                         item = int.Parse(Console.ReadLine());
+                        hashTable.Delete(item);
                         break;
                     case 5:
                         Environment.Exit(0);

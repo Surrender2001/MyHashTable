@@ -8,7 +8,7 @@ namespace MyHashTable
 {
     class HashTable
     {
-        const double A = 0.618;
+        const double GOLDEN_RATIO = 0.618;
         private Item[] items;
         private int _size;
         public HashTable(int size)
@@ -19,7 +19,6 @@ namespace MyHashTable
             {
                 items[i] = new Item(i);
             }
-
         }
 
         public void Add(int item)
@@ -27,6 +26,21 @@ namespace MyHashTable
             int key = GetHash(item);
             items[key].Nodes.Add(item);
         }
+
+        public void Delete(int item)
+        {
+            int key = GetHash(item);
+            if (items[key].Nodes.Contains(item))
+            {
+                items[key].Nodes.Remove(item);
+            }
+            else
+            {
+                Console.WriteLine("Not found");
+            }
+
+        }
+           
 
         public bool Search(int item)
         {
@@ -36,8 +50,7 @@ namespace MyHashTable
 
         private int GetHash(int item)
         {
-            
-            return (int)Math.Floor(_size * ((item * A) % 1));
+            return (int)Math.Floor(_size * (item * GOLDEN_RATIO % 1));
         }
 
 
