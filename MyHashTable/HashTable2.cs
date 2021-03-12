@@ -30,7 +30,7 @@ namespace MyHashTable
         {
             int key = GetHash(item);
             if (items[key].Nodes.Contains(item))
-                items[key].Nodes.delete(item);
+                items[key].Nodes.delete(key);
             else
                 Console.WriteLine("Not found");
         }
