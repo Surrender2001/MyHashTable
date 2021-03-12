@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace MyHashTable
 {
-    class SuperHashTable<T>
+    class HashTable<T>
     {
         private Item[] items;
-        public SuperHashTable(int size)
+        public HashTable(int size)
         {
             items = new Item[size];
             for (int i = 0; i < items.Length; i++)

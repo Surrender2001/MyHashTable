@@ -6,7 +6,7 @@ namespace MyHashTable
     {
         static void Main(string[] args)
         {
-            var HashTable = new SuperHashTable<int>(20);
+            var HashTable = new HashTable<int>(20);
 
 
         }
