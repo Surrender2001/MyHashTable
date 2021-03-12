@@ -12,8 +12,7 @@ namespace MyHashTable
             var hashTable = new HashTable(size);
             int variant;
             int item;
-            
-            while (true)
+             while (true)
             {
                 Console.WriteLine("1-add, 2-delete, 3-find, 4-show, 5-quit, default-continue");
                 variant=int.Parse(Console.ReadLine());
@@ -26,6 +25,16 @@ namespace MyHashTable
                     case 2: 
                         item = int.Parse(Console.ReadLine());
                         hashTable.Delete(item);
+                        break;
+                    case 3:
+                        item = int.Parse(Console.ReadLine());
+                        if (hashTable.Search(item))
+                            Console.WriteLine("is contained");
+                        else
+                            Console.WriteLine("isn't contained");
+                        break;
+                    case 4:
+                        hashTable.Show();
                         break;
                     case 5:
                         Environment.Exit(0);

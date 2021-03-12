@@ -16,9 +16,7 @@ namespace MyHashTable
             _size = size;
             items = new Item[size];
             for (int i = 0; i < items.Length; i++)
-            {
-                items[i] = new Item(i);
-            }
+                items[i] = new Item(i); 
         }
 
         public void Add(int item)
@@ -31,16 +29,23 @@ namespace MyHashTable
         {
             int key = GetHash(item);
             if (items[key].Nodes.Contains(item))
-            {
                 items[key].Nodes.Remove(item);
-            }
             else
-            {
-                Console.WriteLine("Not found");
-            }
-
+                Console.WriteLine("Not found");  
         }
            
+        public void Show()
+        {
+            for (int i = 0; i < _size; i++)
+            {
+                Console.WriteLine($"{i} row");
+                foreach (var item in items[i].Nodes)
+                {
+                    Console.Write(item+"\t");
+                }
+                Console.WriteLine();
+            }
+        }
 
         public bool Search(int item)
         {
