@@ -9,7 +9,7 @@ namespace MyHashTable
             Console.WriteLine("Enter size of hash table");
             int size = int.Parse(Console.ReadLine());
 
-            var hashTable = new HashTable(size);
+            var hashTable = new HashTable2(size);
             int variant;
             int item;
              while (true)

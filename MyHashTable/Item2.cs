@@ -4,20 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
-
 namespace MyHashTable
 {
-    class Item
+    class Item2
     {
         public int Key { get; set; }
-        public List<int> Nodes { get; set; }
+        public List Nodes { get; set; }
 
-        public Item(int key)
+        public Item2(int key)
         {
             Key = key;
-            Nodes = new List<int>();
+            Nodes = new List();
         }
+
     }
 }
