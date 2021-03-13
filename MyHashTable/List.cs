@@ -97,6 +97,16 @@ namespace MyHashTable
                     if (Head.data == x) Head = Tail; else Tail = Head;
                     break;
                 default:
+                    if(Del == Tail)
+                    {
+                        Tail = term;
+                        break;
+                    }
+                    if(Del == Head)
+                    {
+                        Head = Head.Next;
+                        break;
+                    }
                     term.Next = Del.Next;
                     break; 
             }
