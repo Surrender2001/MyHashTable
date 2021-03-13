@@ -15,7 +15,7 @@ namespace MyHashTable
              while (true)
             {
                 Console.WriteLine("1-add, 2-delete, 3-find, 4-show, 5-quit, default-continue");
-                variant=int.Parse(Console.ReadLine());
+                    variant=int.Parse(Console.ReadLine());
                 switch (variant)
                 {
                     case 1:

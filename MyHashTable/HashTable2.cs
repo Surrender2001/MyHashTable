@@ -56,6 +56,5 @@ namespace MyHashTable
             return (int)Math.Floor(_size * (item * GOLDEN_RATIO % 1));
         }
 
-
     }
 }
