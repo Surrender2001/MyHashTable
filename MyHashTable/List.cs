@@ -110,26 +110,12 @@ namespace MyHashTable
                     term.Next = Del.Next;
                     break; 
             }
-                
-            //if(Head.data == x && Head == Tail) { Head = Tail = null; return; }
-            //if (Head.data == x && Count() == 2) { Tail = Head; return; }
-            //if (Tail.data == x && Count() == 2) { Head = Tail; return; }
 
-            
 
 
 
         }
 
-        private void Pop_Front()
-        {
-            if (Count() == 1) { Head = Tail = null; }
-            else
-            {
-                Node temp = Head; //Вспомогательный указатель для удаления элемента
-                Head = Head.Next;
-                Tail.Next = Head;
-            }
-        }
+
     }
 }
