@@ -79,21 +79,36 @@ namespace MyHashTable
 
         public void delete(int x)
         {
-            if (Count() == 0) Console.WriteLine("no items in the list");
-            else
-            {
-                if (x == 0) Pop_Front();
-                else if (x >= Count() || x < 0) Console.WriteLine("out of bounds of the list"); 
-                else
-                {
-                    Node previous = Head;  //Вспомогательный указатель для удаления элемента
-                    for (int i = 0; i < x - 1; i++) previous = previous.Next;
+            
+            Node Del = Head,term=null;  //Вспомогательный указатель для удаления элемента
 
-                    Node toDelete = previous.Next;  //Вспомогательный указатель для удаления элемента
-                    previous.Next = toDelete.Next;
-                    Tail = previous;
-                }
+            while (Del.data!=x)
+            {
+                term = Del;
+                Del = Del.Next;
             }
+                
+            switch (Count())
+            {     
+                case 1:
+                    Head = Tail = null;
+                    break;
+                case 2:
+                    if (Head.data == x) Head = Tail; else Tail = Head;
+                    break;
+                default:
+                    term.Next = Del.Next;
+                    break; 
+            }
+                
+            //if(Head.data == x && Head == Tail) { Head = Tail = null; return; }
+            //if (Head.data == x && Count() == 2) { Tail = Head; return; }
+            //if (Tail.data == x && Count() == 2) { Head = Tail; return; }
+
+            
+
+
+
         }
 
         private void Pop_Front()
