@@ -20,7 +20,12 @@ namespace MyHashTable
 		{
 			Head = Tail=null;
 		}
-		public void add(int x)
+
+        //
+        //Формальные параметры:
+        //Входные данные:
+        //Выходные данные:
+        public void add(int x)
 		{
 			Node temp = new Node();     //Добавление нового элемента в список            
 			temp.Next = Head;
@@ -34,6 +39,10 @@ namespace MyHashTable
 
 		}
 
+        //
+        //Формальные параметры:
+        //Входные данные:
+        //Выходные данные:
         public int Count()
         {
             int size = 1;//счётчик 
@@ -48,6 +57,10 @@ namespace MyHashTable
             return size;
         }
 
+        //
+        //Формальные параметры:
+        //Входные данные:
+        //Выходные данные:
         public bool Contains(int x)
         {
             Node temp = Head; //резервный указатель на первый элемент
@@ -63,6 +76,11 @@ namespace MyHashTable
             return false;
         }
 
+
+        //
+        //Формальные параметры:
+        //Входные данные:
+        //Выходные данные:
         public void Show()
         {
             Node tempHead = Head;
@@ -77,6 +95,11 @@ namespace MyHashTable
                 }
         }
 
+
+        //
+        //Формальные параметры:
+        //Входные данные:
+        //Выходные данные:
         public void delete(int x)
         {
             

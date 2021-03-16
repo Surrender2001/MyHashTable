@@ -8,10 +8,11 @@ namespace MyHashTable
 {
     class HashTable2
     {
-        const double GOLDEN_RATIO = 0.618;
-        private Item2[] items;
-        private int _size;
+        const double GOLDEN_RATIO = 0.618;//золотое сечение
+        private Item2[] items;//Хеш-таблица
+        private int _size;//Размер
 
+        
         public HashTable2(int size)
         {
             _size = size;
@@ -20,12 +21,21 @@ namespace MyHashTable
                 items[i] = new Item2(i);
         }
 
+        //
+        //Формальные параметры:
+        //Входные данные:
+        //Выходные данные:
         public void Add(int item)
         {
             int key = GetHash(item);
             items[key].Nodes.add(item);
         }
 
+
+        //
+        //Формальные параметры:
+        //Входные данные:
+        //Выходные данные:
         public void Delete(int item)
         {
             int key = GetHash(item);
@@ -35,6 +45,11 @@ namespace MyHashTable
                 Console.WriteLine("Not found");
         }
 
+
+        //
+        //Формальные параметры:
+        //Входные данные:
+        //Выходные данные:
         public void Show()
         {
             for (int i = 0; i < _size; i++)
@@ -45,12 +60,21 @@ namespace MyHashTable
             }
         }
 
+        //
+        //Формальные параметры:
+        //Входные данные:
+        //Выходные данные:
         public bool Search(int item)
         {
             int key = GetHash(item);
             return items[key].Nodes.Contains(item);
         }
 
+
+        //
+        //Формальные параметры:
+        //Входные данные:
+        //Выходные данные:
         private int GetHash(int item)
         {
             return (int)Math.Floor(_size * (item * GOLDEN_RATIO % 1));
