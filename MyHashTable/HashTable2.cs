@@ -32,6 +32,7 @@ namespace MyHashTable
         public void Add(int item)
         {
             int key = GetHash(item);
+            if(!items[key].Nodes.Contains(item))
             items[key].Nodes.add(item);
         }
 
@@ -81,7 +82,7 @@ namespace MyHashTable
         //Выходные данные:хеш-таблица
         private int GetHash(int item)
         {
-            return (int)Math.Floor(_size * (item * GOLDEN_RATIO % 1));
+            return ((int)Math.Floor(_size * (item * GOLDEN_RATIO % 1)))%_size;
         }
 
 

@@ -11,10 +11,7 @@ namespace MyHashTable
         public int Key { get; set; }//ключ
         public List Nodes { get; set; }//список
 
-        //
-        //Формальные параметры:
-        //Входные данные:
-        //Выходные данные:
+
         public Item2(int key)
         {
             Key = key;
